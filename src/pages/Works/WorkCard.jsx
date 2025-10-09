@@ -4,32 +4,68 @@ import withReactContent from "sweetalert2-react-content";
 
 const MySwal = withReactContent(Swal);
 
+// Frontend and Backend tech arrays
+const frontEndTech = [
+  "React",
+  "TailwindCSS",
+  "Bootstrap",
+  "Next.js",
+  "Firebase",
+  "Firestore",
+  "Vue",
+  "Redux",
+];
+const backEndTech = [
+  "Node.js",
+  "Express.js",
+  "Sequelize",
+  "PostgreSQL",
+  "PG",
+  "MongoDB",
+];
+
+// Badge colors
+const badgeColor = {
+  front: "bg-blue-100 text-blue-800",
+  back: "bg-green-100 text-green-800",
+  other: "bg-gray-100 text-gray-800",
+};
+
 const WorkCard = ({ project }) => {
   const handleClick = () => {
-    // Create badges HTML from techStack array
     const techBadges = project.techStack
-      .map(
-        (tech) =>
-          `<span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium mr-1 mb-1 px-2.5 py-0.5 rounded">${tech}</span>`
-      )
+      .map((tech) => {
+        const category = frontEndTech.includes(tech)
+          ? "front"
+          : backEndTech.includes(tech)
+          ? "back"
+          : "other";
+        return `<span class="inline-block ${badgeColor[category]} text-xs font-medium mr-1 mb-1 px-2.5 py-0.5 rounded">${tech}</span>`;
+      })
       .join(" ");
+
+    const gridDetails = `
+      <div class="grid grid-cols-2 gap-4 mt-3 text-sm">
+        <div><strong>Duration:</strong><br/>${project.duration}</div>
+        <div><strong>Roles:</strong><br/>${project.roles}</div>
+        <div><strong>Client:</strong><br/>${project.client}</div>
+        <div><strong>Category:</strong><br/>${project.category}</div>
+        <div class="col-span-2"><strong>GitHub:</strong> <a href="${project.github}" target="_blank" class="text-blue-600 underline">View Repo</a></div>
+        <div class="col-span-2"><strong>Live Demo:</strong> <a href="${project.liveDemo}" target="_blank" class="text-blue-600 underline">Visit</a></div>
+      </div>
+    `;
 
     MySwal.fire({
       title: project.title,
       html: `
-        <img src="${project.image}" alt="${project.title}" class="w-full h-40 object-cover mb-4 rounded" />
-        <p><strong>Tech Stack:</strong> ${techBadges}</p>
-        <p><strong>Duration:</strong> ${project.duration}</p>
-        <p><strong>Description:</strong> ${project.description}</p>
-        <p><strong>Roles:</strong> ${project.roles}</p>
-        <p><strong>Client:</strong> ${project.client}</p>
-        <p><strong>GitHub:</strong> <a href="${project.github}" target="_blank" class="text-blue-600 underline">View Repo</a></p>
-        <p><strong>Live Demo:</strong> <a href="${project.liveDemo}" target="_blank" class="text-blue-600 underline">Visit</a></p>
-        <p><strong>Category:</strong> ${project.category}</p>
+        <img src="${project.image}" alt="${project.title}" class="w-full h-40 object-cover rounded mb-4" />
+        <div class="mb-2">${techBadges}</div>
+        <p class="text-sm mb-3">${project.description}</p>
+        ${gridDetails}
       `,
       showCloseButton: true,
       showConfirmButton: false,
-      width: 400,
+      width: 500,
       customClass: {
         htmlContainer: "text-left",
       },
@@ -48,16 +84,28 @@ const WorkCard = ({ project }) => {
       />
       <div className="p-4">
         <h3 className="font-semibold text-lg">{project.title}</h3>
-        <div className="flex flex-wrap gap-1 mt-1">
-          {project.techStack.map((tech, index) => (
-            <span
-              key={index}
-              className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded"
-            >
-              {tech}
-            </span>
-          ))}
+
+        {/* Tech badges with color by Front/Back */}
+        <div className="flex flex-wrap gap-1 mt-1 overflow-hidden whitespace-nowrap text-ellipsis">
+          {project.techStack.map((tech, index) => {
+            const category = frontEndTech.includes(tech)
+              ? "front"
+              : backEndTech.includes(tech)
+              ? "back"
+              : "other";
+            return (
+              <span
+                key={index}
+                className={`${badgeColor[category]} text-xs font-medium px-2.5 py-0.5 rounded`}
+              >
+                {tech}
+              </span>
+            );
+          })}
         </div>
+
+        {/* Description */}
+        <p className="text-sm mt-2 line-clamp-3">{project.description}</p>
       </div>
     </div>
   );
