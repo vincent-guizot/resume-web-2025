@@ -1,5 +1,5 @@
-import TextTitle from "./TextTitle";
+import TextStyle from "./TextStyle";
 import SideBar from "./SideBar";
 import HeroProfile from "./HeroProfile";
 
-export { TextTitle, SideBar, HeroProfile };
+export { TextStyle, SideBar, HeroProfile };

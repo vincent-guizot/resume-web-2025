@@ -1,6 +1,6 @@
 import React from "react";
 
-const TextTitle = ({ text }) => {
+const TextStyle = ({ text }) => {
   return (
     <div className="relative flex items-center gap-2">
       {/* Circle */}
@@ -12,4 +12,4 @@ const TextTitle = ({ text }) => {
   );
 };
 
-export default TextTitle;
+export default TextStyle;
