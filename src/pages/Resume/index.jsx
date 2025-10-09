@@ -3,7 +3,7 @@ import Experiences from "./Experiences";
 import MySkills from "./MySkills";
 
 const Resume = () => (
-  <div>
+  <div className="px-6">
     <Experiences />
     <MySkills />
   </div>

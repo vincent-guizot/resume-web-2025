@@ -8,6 +8,14 @@ import {
 } from "react-icons/fa";
 import pict from "/image/7.png";
 
+const socialLinks = [
+  { icon: FaGithub, url: "https://github.com/yourusername" },
+  { icon: FaDribbble, url: "https://dribbble.com/yourusername" },
+  { icon: FaBehance, url: "https://www.behance.net/yourusername" },
+  { icon: FaLinkedin, url: "https://www.linkedin.com/in/yourusername" },
+  { icon: FaInstagram, url: "https://www.instagram.com/yourusername" },
+];
+
 const Profile = () => {
   return (
     <div className="relative bg-white shadow-md rounded-lg w-full h-[640px] flex flex-col text-center z-20 overflow-hidden">
@@ -28,23 +36,30 @@ const Profile = () => {
         <p className="text-gray-500 italic text-sm">Full Stack Developer</p>
 
         <div className="flex justify-center gap-3 text-gray-600 mt-2">
-          {[FaGithub, FaDribbble, FaBehance, FaLinkedin, FaInstagram].map(
-            (Icon, i) => (
-              <Icon
-                key={i}
-                size={18}
-                className="hover:text-blue-600 transition-transform hover:scale-110 cursor-pointer"
-              />
-            )
-          )}
+          {socialLinks.map(({ icon: Icon, url }, i) => (
+            <a
+              key={i}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-600 transition-transform hover:scale-110"
+            >
+              <Icon size={18} className="cursor-pointer" />
+            </a>
+          ))}
         </div>
       </div>
 
       {/* Bottom 10% */}
       <div className="h-[10%] flex justify-center items-center border-t border-gray-200/60">
-        <button className="text-gray-700 py-2 px-5 rounded-md font-medium bg-transparent hover:text-blue-600 hover:text-white transition-all duration-300">
+        <a
+          href="https://drive.google.com/file/d/16IoxtmVzBgf_phZv7FMP5cFsucnk3N2W/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="uppercase text-gray-700 py-2 px-5 rounded-md font-semibold bg-transparent hover:text-blue-600 transition-all duration-300"
+        >
           Download CV
-        </button>
+        </a>
       </div>
     </div>
   );

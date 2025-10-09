@@ -33,7 +33,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-12 p-6 bg-white rounded-lg shadow-md">
+    <div className="px-6 d">
       {/* Styled heading */}
       <TextStyles text="Contact" />
 

@@ -9,7 +9,7 @@ import MySkills from "./MySkills";
 import Experiences from "./Experiences";
 
 const Home = () => (
-  <div>
+  <div className="px-6">
     <AboutMe />
     <MyServices />
     <MyWorks />

@@ -71,7 +71,7 @@ const WorkExperience = () => {
   ];
 
   return (
-    <div className="my-10 px-4">
+    <div className="">
       <TextStyles text={"Work Experience"} />
 
       <div className="max-w-3xl mx-auto mt-8 relative">

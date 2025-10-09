@@ -3,7 +3,7 @@ import { TextStyles } from "../../components";
 
 const AboutMe = () => {
   return (
-    <div className="px-6 py-8">
+    <div className="">
       <TextStyles text="About Me" />
       <div className="mt-2  space-y-4">
         <p className="text-gray-700 leading-relaxed">

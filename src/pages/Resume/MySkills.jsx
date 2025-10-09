@@ -60,7 +60,7 @@ const MySkills = () => {
   ];
 
   return (
-    <div className="my-10 px-4">
+    <div className=" ">
       <TextStyles text={"My Skills"} />
 
       <div className="grid md:grid-cols-2 gap-8 mt-8">
