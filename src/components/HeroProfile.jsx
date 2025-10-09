@@ -6,14 +6,18 @@ import {
   FaLinkedin,
   FaInstagram,
 } from "react-icons/fa";
-import pict from "../assets/7.png";
+import pict from "/image/7.png"; // or use /7.png if moved to public/
 
 const Profile = () => {
   return (
-    <div className="relative bg-white shadow-md rounded-lg overflow-hidden w-80 h-[480px] flex flex-col text-center z-20">
+    <div className="relative bg-white shadow-md rounded-lg w-full h-[640px] flex flex-col text-center z-20 overflow-hidden">
       {/* Top 60% */}
-      <div className="h-[60%] flex justify-center items-center bg-gray-100">
-        <img src={pict} alt="Profile" className="w-full h-full object-cover" />
+      <div className="h-[60%] flex justify-center items-end rounded-lg bg-gray-100">
+        <img
+          src={pict}
+          alt="Profile"
+          className="w-72l h-72 object-cover object-bottom"
+        />
       </div>
 
       {/* Middle 30% */}
@@ -46,10 +50,9 @@ const Profile = () => {
   );
 };
 
-// 🔹 Background Layer (subtle offset)
 const ProfileBG = () => {
   return (
-    <div className="absolute -top-2 -left-2 w-80 h-[480px] bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-lg z-10"></div>
+    <div className="absolute -top-2 -left-2 w-full h-[640px] bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-lg z-10"></div>
   );
 };
 

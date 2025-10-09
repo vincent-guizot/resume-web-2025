@@ -6,23 +6,22 @@ const MainLayout = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-200 to-gray-100 overflow-hidden">
       {/* 🔹 Floating Sidebar (Desktop) */}
-      <div className="absolute left-6 top-1/2 -translate-y-1/2 z-50 hidden md:block">
+      <div className="absolute left-30 top-1/2 -translate-y-1/2 z-50 hidden md:block">
         <SideBar />
       </div>
 
       {/* 🔹 Main centered container */}
-      <div className="relative w-full max-w-6xl h-[85vh] bg-white rounded-2xl shadow-lg flex overflow-hidden">
+      <div className="relative w-full max-w-6xl h-[85vh]  flex   ">
         {/* Left section: HeroProfile inside container */}
-        <div className="w-[40%] flex justify-center items-center bg-gray-50 border-r border-gray-200">
+        <div className="w-[40%] flex justify-center items-center">
           <HeroProfile />
         </div>
 
         {/* Right section: Outlet content */}
-        <div className="w-[60%] flex flex-col overflow-hidden relative">
-          <div className="flex-1 overflow-y-auto   py-10 scroll-smooth">
+        <div className="w-[60%] flex flex-col overflow-hidden relative px-8 py-8 bg-white rounded-lg shadow-md">
+          <div className="flex-1 overflow-y-auto scroll-smooth">
             <Outlet />
-            <div className="h-12" />{" "}
-            {/* Keeps bottom padding while scrolling */}
+            <div className="h-8" /> {/* Keeps bottom padding while scrolling */}
           </div>
 
           {/* Fade effect at bottom */}
