@@ -30,7 +30,7 @@ const MainLayout = () => {
       </div>
 
       {/* 🔹 Bottom Navigation Bar (Mobile) */}
-      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[90%] bg-white/90 backdrop-blur-md rounded-2xl shadow-md py-3 px-4 flex justify-around items-center md:hidden z-50">
+      <div className="fixed bottom-0 w-[100%] bg-white/90 backdrop-blur-md rounded-2xl shadow-md   flex justify-around items-center md:hidden z-50">
         <SideBar isMobile />
       </div>
     </div>

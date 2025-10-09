@@ -18,7 +18,9 @@ const SideBar = ({ isMobile = false }) => {
   return (
     <nav
       className={`flex ${
-        isMobile ? "flex-row justify-around w-full" : "flex-col gap-6 px-4 py-6"
+        isMobile
+          ? "flex-row justify-around w-full p-5"
+          : "flex-col gap-6 px-4 py-6"
       } items-center bg-white rounded-2xl shadow-md`}
     >
       {navItems.map(({ name, path, icon: Icon }) => (
@@ -30,7 +32,7 @@ const SideBar = ({ isMobile = false }) => {
               } ${isMobile ? "flex-col md:flex-col" : ""}`}
             >
               <Icon className="w-6 h-6" />
-              {!isMobile && <span>{name}</span>}
+              {<span>{name}</span>}
             </div>
           )}
         </NavLink>
