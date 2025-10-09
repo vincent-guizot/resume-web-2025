@@ -6,7 +6,7 @@ import {
   FaLinkedin,
   FaInstagram,
 } from "react-icons/fa";
-import pict from "/image/7.png"; // or use /7.png if moved to public/
+import pict from "/image/7.png";
 
 const Profile = () => {
   return (
@@ -16,13 +16,13 @@ const Profile = () => {
         <img
           src={pict}
           alt="Profile"
-          className="w-72l h-72 object-cover object-bottom"
+          className="w-72 h-72 object-cover object-bottom"
         />
       </div>
 
       {/* Middle 30% */}
       <div className="h-[30%] flex flex-col justify-center items-center space-y-1">
-        <h2 className="text-lg font-bold text-gray-800">
+        <h2 className="text-2xl font-bold text-gray-800">
           Vincent Sadino Guizot
         </h2>
         <p className="text-gray-500 italic text-sm">Full Stack Developer</p>
@@ -42,7 +42,7 @@ const Profile = () => {
 
       {/* Bottom 10% */}
       <div className="h-[10%] flex justify-center items-center border-t border-gray-200/60">
-        <button className="text-gray-700 py-2 px-5 rounded-md font-medium bg-transparent hover:bg-blue-600 hover:text-white transition-all duration-300">
+        <button className="text-gray-700 py-2 px-5 rounded-md font-medium bg-transparent hover:text-blue-600 hover:text-white transition-all duration-300">
           Download CV
         </button>
       </div>
@@ -52,13 +52,13 @@ const Profile = () => {
 
 const ProfileBG = () => {
   return (
-    <div className="absolute -top-2 -left-2 w-full h-[640px] bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-lg z-10"></div>
+    <div className="absolute -top-3 -left-3 w-full h-[640px] bg-gradient-to-br from-blue-700 to-blue-800 rounded-lg shadow z-10 md:block hidden"></div>
   );
 };
 
 const HeroProfile = () => {
   return (
-    <div className="relative flex justify-center items-center">
+    <div className="relative w-full flex justify-center items-center">
       <ProfileBG />
       <Profile />
     </div>

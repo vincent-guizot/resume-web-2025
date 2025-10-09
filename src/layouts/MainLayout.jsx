@@ -4,24 +4,24 @@ import HeroProfile from "../components/HeroProfile";
 
 const MainLayout = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-200 to-gray-100 overflow-hidden">
+    <div className="relative min-h-screen flex flex-col md:flex-row items-center justify-center bg-gradient-to-b from-gray-300 to-gray-200 overflow-hidden">
       {/* 🔹 Floating Sidebar (Desktop) */}
       <div className="absolute left-30 top-1/2 -translate-y-1/2 z-50 hidden md:block">
         <SideBar />
       </div>
 
-      {/* 🔹 Main centered container */}
-      <div className="relative w-full max-w-6xl h-[85vh]  flex   ">
-        {/* Left section: HeroProfile inside container */}
-        <div className="w-[40%] flex justify-center items-center">
+      {/* 🔹 Main container */}
+      <div className="relative w-full max-w-6xl h-auto md:h-[85vh] flex flex-col md:flex-row">
+        {/* Left section: HeroProfile */}
+        <div className="w-full md:w-[40%] flex justify-center items-center mb-6 md:mb-0">
           <HeroProfile />
         </div>
 
         {/* Right section: Outlet content */}
-        <div className="w-[60%] flex flex-col overflow-hidden relative px-8 py-8 bg-white rounded-lg shadow-md">
+        <div className="w-full md:w-[60%] flex flex-col overflow-hidden relative px-6 py-6 bg-white rounded-t-lg md:rounded-r-lg shadow-md">
           <div className="flex-1 overflow-y-auto scroll-smooth">
             <Outlet />
-            <div className="h-8" /> {/* Keeps bottom padding while scrolling */}
+            <div className="h-8" /> {/* Bottom padding */}
           </div>
 
           {/* Fade effect at bottom */}
