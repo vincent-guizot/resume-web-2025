@@ -2,5 +2,10 @@
 import Experiences from "./Experiences";
 import MySkills from "./MySkills";
 
-const Resume = () => <h1>Resume Page</h1>;
+const Resume = () => (
+  <div>
+    <Experiences />
+    <MySkills />
+  </div>
+);
 export default Resume;

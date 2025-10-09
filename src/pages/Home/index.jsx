@@ -13,10 +13,10 @@ const Home = () => (
     <AboutMe />
     <MyServices />
     <MyWorks />
-    <MySkills />
+    {/* <MySkills /> */}
     <Testimonials />
     <Awards />
-    <Experiences />
+    {/* <Experiences /> */}
   </div>
 );
 export default Home;

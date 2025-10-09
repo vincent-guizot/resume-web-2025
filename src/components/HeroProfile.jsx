@@ -6,17 +6,14 @@ import {
   FaLinkedin,
   FaInstagram,
 } from "react-icons/fa";
+import pict from "../assets/7.png";
 
 const Profile = () => {
   return (
     <div className="relative bg-white shadow-lg rounded-xl overflow-hidden w-80 h-[480px] flex flex-col text-center z-20">
       {/* Top 60% */}
       <div className="h-[60%] flex justify-center items-center bg-gradient-to-b from-gray-200 to-white">
-        <img
-          src="https://via.placehold.co/150"
-          alt="Profile"
-          className="w-32 h-32 object-cover"
-        />
+        <img src={pict} alt="Profile" className="w-70 h-70 object-cover" />
       </div>
 
       {/* Middle 30% */}
