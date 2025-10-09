@@ -1,11 +1,11 @@
 import React from "react";
-import { TextTitle } from "../../components";
+import { TextStyles } from "../../components";
 
 const AboutMe = () => {
   return (
     <div className="px-6 py-8">
-      <TextTitle text="About Me" />
-      <div className="mt-6 bg-white shadow-md rounded-2xl p-6 space-y-4">
+      <TextStyles text="About Me" />
+      <div className="mt-2  space-y-4">
         <p className="text-gray-700 leading-relaxed">
           I’m a <span className="font-semibold">Full Stack Web Developer</span>{" "}
           based in <span className="font-semibold">Jakarta, Indonesia</span>,

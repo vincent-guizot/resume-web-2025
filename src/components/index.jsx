@@ -1,5 +1,5 @@
-import TextStyle from "./TextStyle";
-import SideBar from "./SideBar";
+import TextStyles from "./TextStyle";
 import HeroProfile from "./HeroProfile";
+import SideBar from "./SideBar";
 
-export { TextStyle, SideBar, HeroProfile };
+export { TextStyles, HeroProfile, SideBar };

@@ -1,5 +1,5 @@
 import React from "react";
-import { TextTitle } from "../../components";
+import { TextStyles } from "../../components";
 import { Code, Smartphone, Building2, Palette } from "lucide-react";
 
 const services = [
@@ -29,7 +29,7 @@ const MyServices = () => {
   return (
     <div className="px-6 py-8">
       {/* Section Title */}
-      <TextTitle text="My Services" />
+      <TextStyles text="My Services" />
 
       {/* Grid Section */}
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-8">

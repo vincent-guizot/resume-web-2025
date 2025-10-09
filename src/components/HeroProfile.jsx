@@ -9,13 +9,13 @@ import {
 
 const Profile = () => {
   return (
-    <div className="relative bg-white shadow-lg rounded-2xl overflow-hidden w-80 h-[480px] flex flex-col text-center z-20">
+    <div className="relative bg-white shadow-lg rounded-xl overflow-hidden w-80 h-[480px] flex flex-col text-center z-20">
       {/* Top 60% */}
       <div className="h-[60%] flex justify-center items-center bg-gradient-to-b from-gray-200 to-white">
         <img
-          src="https://via.placeholder.com/150"
+          src="https://via.placehold.co/150"
           alt="Profile"
-          className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md"
+          className="w-32 h-32 object-cover"
         />
       </div>
 
@@ -44,8 +44,8 @@ const Profile = () => {
       </div>
 
       {/* Bottom 10% */}
-      <div className="h-[10%] flex justify-center items-center border-t">
-        <button className="bg-blue-600 text-white py-2 px-5 rounded-xl font-medium hover:bg-blue-700 transition">
+      <div className="h-[10%] flex justify-center items-center border-t border-gray-200/50 py-2">
+        <button className="border-gray-400/40 text-gray-700 py-2 px-5 rounded-md font-medium bg-transparent hover:bg-blue-600 hover:text-white transition-all duration-300">
           Download CV
         </button>
       </div>
@@ -53,10 +53,10 @@ const Profile = () => {
   );
 };
 
-// 🔹 Background Layer
+// 🔹 Background Layer (now clearly top-left)
 const ProfileBG = () => {
   return (
-    <div className="absolute top-6 left-6 w-80 h-[480px] bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl shadow-xl z-10"></div>
+    <div className="absolute -top-3 -left-3 w-80 h-[480px] bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl shadow-xl z-10"></div>
   );
 };
 
